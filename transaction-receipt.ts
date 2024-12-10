@@ -3,10 +3,10 @@ import { Web3 } from "web3";
 async function main() {
   const web3 = new Web3("http://127.0.0.1:8545/");
 
-  // create a new Web3.js account object with the private key of a Hardhat test account
+  // new Web3.js account object with the private key of a Hardhat test account
   const privateKey =
     "0xde9be858da4a475276426320d5e9262ecfc3ba460bfac56360bfa6c4c28b4ee0";
-  // the account is created with a wallet, which makes it easier to use
+  // the account is created with a wallet, which makes it easier to use => transaction already signed
   const sender = web3.eth.accounts.wallet.add(privateKey)[0];
   const senderBalanceBefore = await web3.eth.getBalance(sender.address);
   const value = 100n; // Ensure this is BigInt
@@ -40,11 +40,11 @@ async function main() {
   const gasPrice = BigInt(receipt.effectiveGasPrice || 0n); // Convert to BigInt if not already
   const senderBalanceAfter = await web3.eth.getBalance(sender.address);
 
-  const cost = value + gasUsed * gasPrice;
-  const realCost = senderBalanceBefore - senderBalanceAfter;
+  const cost = value + gasUsed * gasPrice; // one way to calculate it
+  const cost2 = senderBalanceBefore - senderBalanceAfter; // another way to calculate it
 
   console.log("Transaction's cost:", cost);
-  console.log("Transaction's real cost:", realCost);
+  console.log("Transaction's cost:", cost2);
 
   // log final balances
   console.log("Final sender balance:", senderBalanceAfter);
