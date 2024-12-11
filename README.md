@@ -1,7 +1,5 @@
 # send-transactions
 
-tutorial for sending transactions using eb3.js
-
 here we gonna send some transactions and see how web3.js can handle different cenarios
 
 create a new project directory for the project, navigate into it and initialize a new Node.js:
@@ -31,7 +29,7 @@ ts-node transaction-receipt.ts
 
 ## transaction's lifecycle stages, which Web3.js supports subscriptions e create custom handlers
 
-- Sending - Web3.js is preparing to send the transaction to the network
+- Sending - web3.js is preparing to send the transaction to the network
 - Sent - the transaction has been sent to the network
 - Transaction hash - a hash of the transaction has been generated
 - Receipt - the transaction has been included in a block
