@@ -13,7 +13,7 @@ async function main() {
     to: receiver.address,
     value: 100,
     // the following two properties must be included in raw transactions
-    ...(block.baseFeePerGas
+    ...(block.baseFeePerGas // EIP-1559 transaction
       ? {
           maxFeePerGas: block.baseFeePerGas * 2n,
           maxPriorityFeePerGas: 100000,

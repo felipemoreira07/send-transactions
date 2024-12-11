@@ -1,6 +1,33 @@
 # send-transactions
 
-tutorial for sending transactions using Web3.js
+tutorial for sending transactions using eb3.js
+
+here we gonna send some transactions and see how web3.js can handle different cenarios
+
+create a new project directory for the project, navigate into it and initialize a new Node.js:
+
+```
+npm init -y
+```
+
+run this setup and initialize a hardhat project:
+
+```
+npm i web3 hardhat ts-node
+npx hardhat init
+```
+
+to start the hardhat development network:
+
+```
+npm init -y
+```
+
+now experiment some transactions by running some transaction files, for example:
+
+```
+ts-node transaction-receipt.ts
+```
 
 ## transaction's lifecycle stages, which Web3.js supports subscriptions e create custom handlers
 
